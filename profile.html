@@ -1,0 +1,756 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f7f4">
+<meta name="description" content="Nupur Wankhede — Product Manager building user-centric investment and fintech experiences.">
+<title>Nupur Wankhede — Product Manager</title>
+<style>
+:root {
+  --bg: #f7f7f4;
+  --surface: #fff;
+  --ink: #20231f;
+  --muted: #6d716b;
+  --line: #e5e7e0;
+  --accent: #315c4b;
+  --accent-soft: #e8eee9;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: Inter, ui-sans-serif, system-ui, -apple-system,
+          BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --max: 1120px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+a:focus-visible {
+  outline: 3px solid #7fa58e;
+  outline-offset: 4px;
+}
+
+.wrap {
+  width: min(var(--max), calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(247,247,244,.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(229,231,224,.85);
+}
+
+.nav {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  font-weight: 750;
+  letter-spacing: -.04em;
+  font-size: 1.05rem;
+}
+
+.brand span { color: var(--accent); }
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: .9rem;
+  color: var(--muted);
+}
+
+.navlinks a:hover { color: var(--accent); }
+
+.nav-cta {
+  padding: 10px 15px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink) !important;
+  background: var(--surface);
+}
+
+.hero { padding: 86px 0 74px; }
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent);
+  font-size: .76rem;
+  font-weight: 750;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.eyebrow:before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: var(--accent);
+}
+
+h1, h2, h3, p { margin-top: 0; }
+
+h1 {
+  font-size: clamp(3.2rem, 7.6vw, 6.7rem);
+  line-height: .98;
+  letter-spacing: -.075em;
+  font-weight: 650;
+  max-width: 900px;
+  margin: 24px 0;
+}
+
+h1 em {
+  font-family: var(--serif);
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: -.07em;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(240px, .65fr);
+  gap: 56px;
+  align-items: end;
+}
+
+.intro {
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  color: var(--muted);
+  max-width: 650px;
+  margin-bottom: 28px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 999px;
+  padding: 13px 18px;
+  font-size: .92rem;
+  font-weight: 650;
+  transition: transform .18s, background .18s;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-secondary {
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.profile-note {
+  border-left: 1px solid #bdc8bd;
+  padding: 5px 0 5px 22px;
+}
+
+.profile-note .quote {
+  font-family: var(--serif);
+  font-size: 1.38rem;
+  line-height: 1.35;
+  letter-spacing: -.025em;
+}
+
+.profile-note .attribution {
+  font-size: .8rem;
+  color: var(--muted);
+  margin: 12px 0 0;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 34px;
+}
+
+.pill {
+  font-size: .8rem;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: #50564f;
+  background: rgba(255,255,255,.55);
+}
+
+.band {
+  background: var(--accent);
+  color: white;
+  padding: 23px 0;
+}
+
+.band-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.band-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.band-num {
+  font-family: var(--serif);
+  font-size: 1.9rem;
+  line-height: 1;
+  color: #d8e5db;
+}
+
+.band-label {
+  font-size: .87rem;
+  color: #e6eee8;
+}
+
+section { padding: 88px 0; }
+
+.section-head {
+  display: grid;
+  grid-template-columns: .7fr 1.3fr;
+  gap: 40px;
+  align-items: start;
+  margin-bottom: 38px;
+}
+
+.section-kicker {
+  font-size: .78rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-weight: 750;
+  margin-top: 9px;
+}
+
+h2 {
+  font-size: clamp(2.1rem, 4.3vw, 3.65rem);
+  line-height: 1.05;
+  letter-spacing: -.065em;
+  font-weight: 620;
+  margin-bottom: 0;
+}
+
+.section-desc {
+  max-width: 590px;
+  color: var(--muted);
+  font-size: 1rem;
+  margin: 17px 0 0;
+}
+
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.cap-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 25px;
+  min-height: 205px;
+}
+
+.card-index {
+  font-size: .75rem;
+  color: var(--accent);
+  font-weight: 750;
+  letter-spacing: .1em;
+}
+
+.cap-card h3 {
+  font-size: 1.18rem;
+  letter-spacing: -.035em;
+  margin: 32px 0 8px;
+}
+
+.cap-card p {
+  font-size: .9rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.experience {
+  background: #f0f1ec;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline { border-top: 1px solid #d9ddd5; }
+
+.role {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 38px;
+  padding: 27px 0;
+  border-bottom: 1px solid #d9ddd5;
+}
+
+.role-date {
+  font-size: .85rem;
+  color: var(--muted);
+  padding-top: 3px;
+}
+
+.role h3 {
+  font-size: 1.2rem;
+  letter-spacing: -.035em;
+  margin: 0 0 4px;
+}
+
+.company {
+  font-size: .92rem;
+  color: var(--accent);
+  font-weight: 650;
+  margin-bottom: 10px;
+}
+
+.role p {
+  color: var(--muted);
+  margin: 0;
+  max-width: 720px;
+  font-size: .94rem;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 14px;
+}
+
+.tag {
+  font-size: .75rem;
+  color: #4f5e53;
+  background: #e3e9e2;
+  border-radius: 6px;
+  padding: 5px 8px;
+}
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.learning-panel {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 18px;
+  padding: 28px;
+}
+
+.learning-panel h3 {
+  font-size: 1.2rem;
+  letter-spacing: -.035em;
+  margin-bottom: 18px;
+}
+
+.simple-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.simple-list li {
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: .92rem;
+}
+
+.simple-list li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.simple-list span {
+  display: block;
+  color: var(--muted);
+  font-size: .82rem;
+  margin-top: 3px;
+}
+
+.contact {
+  padding: 78px 0 86px;
+  background: #202d26;
+  color: white;
+}
+
+.contact .eyebrow { color: #b9d0bf; }
+
+.contact h2 {
+  max-width: 760px;
+  margin: 20px 0;
+}
+
+.contact p {
+  color: #d0d9d2;
+  max-width: 590px;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.contact-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.contact .btn-primary {
+  background: #dbe8de;
+  color: #21382b;
+}
+
+.contact .btn-secondary {
+  border-color: #526259;
+  background: transparent;
+  color: white;
+}
+
+footer {
+  padding: 20px 0;
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 760px) {
+  .wrap { width: min(var(--max), calc(100% - 32px)); }
+  .nav { min-height: 64px; }
+  .navlinks { gap: 14px; }
+  .navlinks a:not(.nav-cta) { display: none; }
+  .hero { padding: 60px 0 54px; }
+  .hero-grid, .section-head {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .profile-note { max-width: 430px; }
+  .band-inner { grid-template-columns: 1fr; gap: 15px; }
+  section { padding: 65px 0; }
+  .capability-grid { grid-template-columns: 1fr; }
+  .cap-card { min-height: auto; }
+  .cap-card h3 { margin-top: 22px; }
+  .role { grid-template-columns: 1fr; gap: 8px; padding: 23px 0; }
+  .learning-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="Nupur Wankhede home">NW<span>.</span></a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#experience">Experience</a>
+      <a href="#learning">Education</a>
+      <a class="nav-cta" href="#contact">Let’s connect ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Product management · Fintech · Investments</div>
+      <h1>Building financial products with <em>people in mind.</em></h1>
+      <div class="hero-grid">
+        <div>
+          <p class="intro">
+            I’m Nupur Wankhede, a Product Manager at Bajaj Markets.
+            I bring together product strategy, customer needs and
+            cross-functional execution to make investment experiences
+            more intuitive and accessible.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#experience">Explore my work ↘</a>
+            <a class="btn btn-secondary" href="mailto:nupur.wankhede@yahoo.com">Email me ↗</a>
+          </div>
+          <div class="meta">
+            <span class="pill">Mutual Funds</span>
+            <span class="pill">Fixed Deposits</span>
+            <span class="pill">Demat</span>
+            <span class="pill">AI for product</span>
+          </div>
+        </div>
+        <aside class="profile-note">
+          <p class="quote">“Success is the sum of small efforts, repeated day in and day out.”</p>
+          <p class="attribution">— Robert Collier</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <div class="band">
+    <div class="wrap band-inner">
+      <div class="band-item"><span class="band-num">01</span><span class="band-label">Strategy shaped around real user needs</span></div>
+      <div class="band-item"><span class="band-num">02</span><span class="band-label">End-to-end product delivery</span></div>
+      <div class="band-item"><span class="band-num">03</span><span class="band-label">Financial services domain expertise</span></div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-kicker">01 / About</div>
+        <div>
+          <h2>Bridging business goals and better user experiences.</h2>
+          <p class="section-desc">
+            With experience across investment products, platform operations
+            and financial services, I focus on turning complex journeys into
+            clear, customer-centred experiences. I enjoy working across teams,
+            improving processes and using insights to guide product decisions.
+          </p>
+        </div>
+      </div>
+      <div class="capability-grid">
+        <article class="cap-card">
+          <div class="card-index">01 — THINK</div>
+          <h3>Product strategy</h3>
+          <p>Roadmaps, prioritisation and product decisions aligned with customer needs and business outcomes.</p>
+        </article>
+        <article class="cap-card">
+          <div class="card-index">02 — BUILD</div>
+          <h3>Cross-functional delivery</h3>
+          <p>Partnering with design, engineering, operations and stakeholders to move from definition to launch.</p>
+        </article>
+        <article class="cap-card">
+          <div class="card-index">03 — IMPROVE</div>
+          <h3>Growth & optimisation</h3>
+          <p>Using data-backed insights to refine onboarding, improve processes and strengthen engagement.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="expertise" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-kicker">02 / Expertise</div>
+        <div>
+          <h2>Where I create value.</h2>
+          <p class="section-desc">
+            A combination of product craft and financial services knowledge,
+            from investment journeys to operational foundations.
+          </p>
+        </div>
+      </div>
+      <div class="capability-grid">
+        <article class="cap-card">
+          <div class="card-index">DOMAIN</div>
+          <h3>Investment products</h3>
+          <p>Mutual Funds, Fixed Deposits and Demat account experiences across digital platforms.</p>
+        </article>
+        <article class="cap-card">
+          <div class="card-index">CRAFT</div>
+          <h3>Product lifecycle</h3>
+          <p>Roadmaps, requirements, onboarding, go-to-market planning and continuous optimisation.</p>
+        </article>
+        <article class="cap-card">
+          <div class="card-index">FOUNDATION</div>
+          <h3>Platform operations</h3>
+          <p>Operational workflows, integrations and coordination across market infrastructure participants.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-kicker">03 / Experience</div>
+        <div>
+          <h2>Experience across products and market infrastructure.</h2>
+          <p class="section-desc">
+            A career built around financial services, digital experiences
+            and the operational detail that helps products work reliably.
+          </p>
+        </div>
+      </div>
+      <div class="timeline">
+        <article class="role">
+          <div class="role-date">Oct 2021 — Present</div>
+          <div>
+            <h3>Product Manager</h3>
+            <div class="company">Bajaj Finserv · Bajaj Markets</div>
+            <p>Manage investment product experiences spanning Mutual Funds, Fixed Deposits and Demat. Work across product planning, stakeholder alignment, customer journeys and go-to-market execution.</p>
+            <div class="tag-row"><span class="tag">Digital products</span><span class="tag">Product strategy</span><span class="tag">Customer journeys</span></div>
+          </div>
+        </article>
+        <article class="role">
+          <div class="role-date">Jun 2019 — Oct 2021</div>
+          <div>
+            <h3>Deputy Manager</h3>
+            <div class="company">BSE India</div>
+            <p>Worked in the financial market ecosystem, including BSE StAR MF operations and coordination across mutual fund distribution workflows.</p>
+            <div class="tag-row"><span class="tag">BSE StAR MF</span><span class="tag">Operations</span></div>
+          </div>
+        </article>
+        <article class="role">
+          <div class="role-date">Jan 2017 — May 2019</div>
+          <div>
+            <h3>Assistant Manager</h3>
+            <div class="company">BSE India</div>
+            <p>Contributed to operational processes and services within the exchange environment.</p>
+          </div>
+        </article>
+        <article class="role">
+          <div class="role-date">Jan 2016 — Jan 2017</div>
+          <div>
+            <h3>Management Trainee</h3>
+            <div class="company">BSE India</div>
+            <p>Built foundational experience in financial markets and exchange operations.</p>
+          </div>
+        </article>
+        <article class="role">
+          <div class="role-date">May 2015 — Jul 2015</div>
+          <div>
+            <h3>Intern</h3>
+            <div class="company">CDSL India</div>
+            <p>Early exposure to India's securities and depository ecosystem.</p>
+          </div>
+        </article>
+        <article class="role">
+          <div class="role-date">Aug 2012 — Jun 2014</div>
+          <div>
+            <h3>Article Assistant</h3>
+            <div class="company">Dhannawat Agarwal & Co.</div>
+            <p>Worked across auditing, returns filing, financial accounting and vouching.</p>
+            <div class="tag-row"><span class="tag">Accounting</span><span class="tag">Audit</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="learning">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-kicker">04 / Learning</div>
+        <div>
+          <h2>Learning is part of the work.</h2>
+          <p class="section-desc">
+            Building on a finance foundation while exploring how emerging
+            technology can support better product thinking.
+          </p>
+        </div>
+      </div>
+      <div class="learning-grid">
+        <div class="learning-panel">
+          <h3>Education</h3>
+          <ul class="simple-list">
+            <li><strong>Post Graduate Program in Global Financial Markets</strong><span>Bombay Stock Exchange · 2014–2016</span></li>
+            <li><strong>Bachelor of Business Administration (BBA)</strong><span>Rashtrasant Tukadoji Maharaj Nagpur University · 2012–2014</span></li>
+            <li><strong>CA Internship</strong><span>The Institute of Chartered Accountants of India · 2010–2012</span></li>
+          </ul>
+        </div>
+        <div class="learning-panel">
+          <h3>Courses & certifications</h3>
+          <ul class="simple-list">
+            <li>Generative AI for Product Managers</li>
+            <li>Becoming an AI-First Product Leader</li>
+            <li>Generative AI for Digital Marketers</li>
+            <li>The Six Morning Habits of High Performers</li>
+            <li>Body Language for Women</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top:30px">
+        <div class="section-kicker">Languages</div>
+        <div class="meta" style="margin-top:12px">
+          <span class="pill">English</span>
+          <span class="pill">Hindi</span>
+          <span class="pill">Marathi</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="eyebrow">Let’s connect</div>
+      <h2>Have a product idea worth making real?</h2>
+      <p>
+        I’m always open to thoughtful conversations about product,
+        financial services, customer experience and emerging technology.
+      </p>
+      <div class="contact-row">
+        <div class="contact-links">
+          <a class="btn btn-primary" href="mailto:nupur.wankhede@yahoo.com">nupur.wankhede@yahoo.com ↗</a>
+          <a class="btn btn-secondary"
+             href="https://www.linkedin.com/in/nupur-wankhede"
+             target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        </div>
+        <span style="font-size:.85rem;color:#c5d0c8">Pune, Maharashtra, India</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> Nupur Wankhede</span>
+    <span>Designed with clarity, built for people.</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
